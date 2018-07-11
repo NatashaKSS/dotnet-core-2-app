@@ -18,6 +18,7 @@ namespace dotnet_core_app
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<IGreeter, Greeter>();
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -32,7 +33,9 @@ namespace dotnet_core_app
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseFileServer();
+            app.UseStaticFiles();
+
+            app.UseMvcWithDefaultRoute();
 
             app.Use(next =>
             {
