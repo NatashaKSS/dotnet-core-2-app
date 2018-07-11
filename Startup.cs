@@ -24,10 +24,12 @@ namespace dotnet_core_app
                               IHostingEnvironment env,
                               IGreeter greeter)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
+            //if (env.IsDevelopment())
+            //{
+            //    app.UseDeveloperExceptionPage();
+            //}
+
+            app.UseWelcomePage();
 
             app.Run(async (context) =>
             {
