@@ -32,6 +32,8 @@ namespace dotnet_core_app
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseFileServer();
+
             app.Use(next =>
             {
                 // The middleware invoked once per HTTP request
