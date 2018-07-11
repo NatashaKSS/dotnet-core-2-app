@@ -26,10 +26,11 @@ namespace dotnet_core_app
                               IGreeter greeter,
                               ILogger<Startup> logger)
         {
-            //if (env.IsDevelopment())
-            //{
-            //    app.UseDeveloperExceptionPage();
-            //}
+            if (env.IsDevelopment())
+            {
+                // Stack trace for developers when exceptions are thrown in server
+                app.UseDeveloperExceptionPage();
+            }
 
             app.Use(next =>
             {
